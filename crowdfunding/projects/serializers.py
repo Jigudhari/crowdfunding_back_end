@@ -28,3 +28,6 @@ class ProjectDetailSerializer(ProjectSerializer):
       instance.owner = validated_data.get('owner', instance.owner)
       instance.save()
       return instance
+   
+class PledgeDetailSerializer(PledgeSerializer):
+   pledges = PledgeSerializer(many=True, read_only=True)
