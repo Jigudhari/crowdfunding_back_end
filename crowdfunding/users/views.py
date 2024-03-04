@@ -8,7 +8,7 @@ from rest_framework import status, permissions
 from projects.permissions import IsOwnerOrReadOnly
 
 class CustomUserList(APIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     def get(self, request):
         users = CustomUser.objects.all()
         serializer = CustomUserSerializer(users, many=True)
